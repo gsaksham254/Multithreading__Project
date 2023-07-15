@@ -1,4 +1,4 @@
-public class Drive {
+class Drive {
     
 	public static void main(String[] args) {		
 		Company comp=new Company();
@@ -8,5 +8,5 @@ public class Drive {
 		c.start();
 
 	}
-    
+
 }

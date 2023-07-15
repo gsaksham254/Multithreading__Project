@@ -1,7 +1,5 @@
-
 public class Drive {
-    class Main
-{
+    
 	public static void main(String[] args) {		
 		Company comp=new Company();
 		Producer p=new Producer(comp);
@@ -10,5 +8,5 @@ public class Drive {
 		c.start();
 
 	}
-}
+    
 }

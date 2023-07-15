@@ -1,7 +1,5 @@
-public class Mooc {
-    class Producer extends Thread
+ class Producer extends Thread
 {
-
 	Company c;
 	Producer(Company c)
 	{
@@ -12,10 +10,15 @@ public class Mooc {
 		int i=1;
 		while(true)
 		{
-			this.c.produce_item(i);
+			try {
+				this.c.produce_item(i);
+			} catch (Exception e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+			}
 			try{Thread.sleep(1000);}catch(Exception e){}
 			i++;
 		}
 	}
 }
-}
+

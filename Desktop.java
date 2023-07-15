@@ -1,29 +1,27 @@
 class Company
 {
 	int n;
-	boolean f=false;
-	// f=false: chance: producer
-	//f=true: chance :consumer
+	boolean Trigger = true;
 	synchronized public void produce_item(int n)throws Exception
 	{
-		if(f)
+		if(Trigger)
 		{
 			wait();
 		}
 		this.n=n;
 		System.out.println("Produced : "+this.n);
-		f=true;
+		Trigger=false;
 		notify();
 	}
 
 	synchronized public int consume_item()throws Exception
 	{
-		if(!f)
+		if(!Trigger)
 		{
 			wait();
 		}
 		System.out.println("Consumed : "+this.n);
-		f=false;
+		Trigger = true;
 		notify();
 		return this.n;
 	}
